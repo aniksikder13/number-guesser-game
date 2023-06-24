@@ -10,17 +10,18 @@ console.log(correct)
 
 function gameRound(){
     let game=false
+    let chance= 3
     for (let round = 0; round < 3; round++) {
        userGuesed= parseFloat(prompt('Guess a Number: '))
-
+        chance--
         if(userGuesed < correct){
-            alert('Correct answer is greater! ')
+            alert(`Correct answer is greater!\n Your chance left ${chance}`)
         } else if(userGuesed === correct){
             alert('You Win!')
             game= true
             break
         } else if(userGuesed > correct){
-            alert('Correct answer is smaller! ')
+            alert(`Correct answer is smaller!\n Your chance left ${chance} `)
         }
     }
     return game
